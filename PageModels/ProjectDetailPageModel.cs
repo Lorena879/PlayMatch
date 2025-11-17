@@ -195,7 +195,7 @@ namespace PlayMatch.PageModels
             }
 
             await Shell.Current.GoToAsync("..");
-            await AppShell.DisplayToastAsync("Project saved");
+            await Shell.Current.DisplayAlert("Éxito", "Project saved", "OK");
         }
 
         [RelayCommand]

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PlayMatch.Views.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Mi perfil"
+    BackgroundColor="#FFF8FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+            <Image Source="profile_placeholder.png" HeightRequest="180" WidthRequest="180" HorizontalOptions="Center" />
+            <Label x:Name="LblName" Text="Tu nombre" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label x:Name="LblBio" Text="Tu biografía aparecerá aquí." HorizontalOptions="Center" TextColor="Gray"/>
+            <Button Text="Editar perfil" Clicked="BtnEdit_Clicked" BackgroundColor="#FF4F79" TextColor="White" CornerRadius="12"/>
+            <Button Text="Cerrar sesión" Clicked="BtnLogout_Clicked" BackgroundColor="#FFF" TextColor="#E24B6A" BorderColor="#E24B6A" CornerRadius="12"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

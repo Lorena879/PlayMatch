@@ -168,7 +168,7 @@ namespace PlayMatch.PageModels
 
             OnPropertyChanged(nameof(HasCompletedTasks));
             Tasks = new(Tasks);
-            await AppShell.DisplayToastAsync("All cleaned up!");
+            await Shell.Current.DisplayAlert("Limpieza", "All cleaned up!", "OK");
         }
     }
 }

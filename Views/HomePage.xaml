@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PlayMatch.Views.HomePage"
+    BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="*, Auto" Padding="15">
+
+        <!-- TARJETA PRINCIPAL (PERFILES) -->
+        <Grid x:Name="CardsGrid"
+              Grid.Row="0"
+              VerticalOptions="Center"
+              HorizontalOptions="Center">
+        </Grid>
+
+        <!-- BOTONES INFERIORES ESTILO TINDER -->
+        <HorizontalStackLayout
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Spacing="45"
+            Margin="0,12">
+
+            <!-- NO ME GUSTA -->
+            <Frame WidthRequest="80" HeightRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#FF5A5F"
+                   HasShadow="True"
+                   Padding="0">
+                <ImageButton Source="icon_nope.png"
+                             BackgroundColor="Transparent"
+                             Clicked="BtnNope_Clicked"/>
+            </Frame>
+
+            <!-- SUPER LIKE -->
+            <Frame WidthRequest="80" HeightRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#3B9DF8"
+                   HasShadow="True"
+                   Padding="0">
+                <ImageButton Source="icon_superlike.png"
+                             BackgroundColor="Transparent"
+                             Clicked="BtnSuper_Clicked"/>
+            </Frame>
+
+            <!-- LIKE -->
+            <Frame WidthRequest="80" HeightRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#4ADE80"
+                   HasShadow="True"
+                   Padding="0">
+                <ImageButton Source="icon_like.png"
+                             BackgroundColor="Transparent"
+                             Clicked="BtnLike_Clicked"/>
+            </Frame>
+
+        </HorizontalStackLayout>
+
+    </Grid>
+</ContentPage>
+

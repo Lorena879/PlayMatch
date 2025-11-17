@@ -46,7 +46,7 @@ namespace PlayMatch.PageModels
                 await _categoryRepository.SaveItemAsync(category);
             }
 
-            await AppShell.DisplayToastAsync("Categories saved");
+            await Shell.Current.DisplayAlert("Éxito", "Categories saved", "OK");
         }
 
         [RelayCommand]
@@ -54,7 +54,7 @@ namespace PlayMatch.PageModels
         {
             Categories.Remove(category);
             await _categoryRepository.DeleteItemAsync(category);
-            await AppShell.DisplayToastAsync("Category deleted");
+            await Shell.Current.DisplayAlert("Éxito", "Category deleted", "OK");
         }
 
         [RelayCommand]
@@ -63,7 +63,7 @@ namespace PlayMatch.PageModels
             var category = new Category();
             Categories.Add(category);
             await _categoryRepository.SaveItemAsync(category);
-            await AppShell.DisplayToastAsync("Category added");
+            await Shell.Current.DisplayAlert("Éxito", "Category added", "OK");
         }
 
         [RelayCommand]
@@ -74,7 +74,7 @@ namespace PlayMatch.PageModels
                 await _tagRepository.SaveItemAsync(tag);
             }
 
-            await AppShell.DisplayToastAsync("Tags saved");
+            await Shell.Current.DisplayAlert("Éxito", "Tags saved", "OK");
         }
 
         [RelayCommand]
@@ -82,7 +82,7 @@ namespace PlayMatch.PageModels
         {
             Tags.Remove(tag);
             await _tagRepository.DeleteItemAsync(tag);
-            await AppShell.DisplayToastAsync("Tag deleted");
+            await Shell.Current.DisplayAlert("Éxito", "Tag deleted", "OK");
         }
 
         [RelayCommand]
@@ -91,7 +91,7 @@ namespace PlayMatch.PageModels
             var tag = new Tag();
             Tags.Add(tag);
             await _tagRepository.SaveItemAsync(tag);
-            await AppShell.DisplayToastAsync("Tag added");
+            await Shell.Current.DisplayAlert("Éxito", "Tag added", "OK");
         }
 
         [RelayCommand]

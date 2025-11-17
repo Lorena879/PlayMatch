@@ -148,6 +148,7 @@ namespace PlayMatch.PageModels
 
             if (_task.ID > 0)
                 await AppShell.DisplayToastAsync("Task saved");
+
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
@@ -169,6 +170,7 @@ namespace PlayMatch.PageModels
 
             await Shell.Current.GoToAsync("..?refresh=true");
             await AppShell.DisplayToastAsync("Task deleted");
+
         }
     }
 }

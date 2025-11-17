@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlayMatch.Views.LoginPage"
+             BackgroundColor="#7A0C1A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="40" Spacing="25">
+
+            <!-- LOGO -->
+            <Image Source="playmatch_logo.png"
+                   HeightRequest="130"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,10"/>
+
+            <!-- PLAYMATCH -->
+            <Label Text="PlayMatch"
+                   TextColor="White"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Inicia sesión para continuar"
+                   TextColor="#FFD7DD"
+                   FontSize="14"
+                   HorizontalOptions="Center"/>
+
+            <!-- EMAIL -->
+            <Frame CornerRadius="15" Padding="12" BackgroundColor="White" HasShadow="False">
+                <Entry x:Name="LoginEmail"
+                       Placeholder="Correo electrónico"
+                       Keyboard="Email"
+                       TextColor="#7A0C1A"/>
+            </Frame>
+
+            <!-- PASSWORD -->
+            <Frame CornerRadius="15" Padding="12" BackgroundColor="White" HasShadow="False">
+                <Entry x:Name="LoginPassword"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       TextColor="#7A0C1A"/>
+            </Frame>
+
+            <!-- LOGIN BUTTON -->
+            <Button Text="Iniciar sesión"
+                    BackgroundColor="White"
+                    TextColor="#7A0C1A"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    FontAttributes="Bold"
+                    Clicked="BtnLogin_Clicked"/>
+
+            <!-- GOOGLE BUTTON -->
+            <Frame CornerRadius="30"
+                   Padding="10"
+                   BackgroundColor="White"
+                   HorizontalOptions="Center"
+                   WidthRequest="60"
+                   HeightRequest="60"
+                   HasShadow="True">
+                <Image Source="google_icon.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnGoogle_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <!-- REGISTER -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                <Label Text="¿No tienes cuenta?" TextColor="#FFD7DD"/>
+                <Label Text="Registrarme"
+                       TextColor="White"
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+            <!-- FORGOT PASSWORD -->
+            <Label Text="¿Olvidaste tu contraseña?"
+                   HorizontalOptions="Center"
+                   TextColor="#FFD7DD">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

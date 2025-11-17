@@ -1,44 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Shell
     x:Class="PlayMatch.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
-    xmlns:pages="clr-namespace:PlayMatch.Pages"
-    Shell.FlyoutBehavior="Flyout"
-    Title="PlayMatch">
+    xmlns:views="clr-namespace:PlayMatch.Views"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Dashboard"
-        Icon="{StaticResource IconDashboard}"
-        ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="main" />
+    <!-- BARRA INFERIOR -->
+    <TabBar>
 
-    <ShellContent
-        Title="Projects"
-        Icon="{StaticResource IconProjects}"
-        ContentTemplate="{DataTemplate pages:ProjectListPage}"
-        Route="projects" />
+        <Tab Title="Inicio" Icon="home.png">
+            <ShellContent Title="Inicio" Route="HomePage" ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
 
-    <ShellContent
-        Title="Manage Meta"
-        Icon="{StaticResource IconMeta}"
-        ContentTemplate="{DataTemplate pages:ManageMetaPage}"
-        Route="manage" />
+        <Tab Title="Chats" Icon="chat.png">
+            <ShellContent Title="Chats" Route="ChatsPage" ContentTemplate="{DataTemplate views:ChatsPage}" />
+        </Tab>
 
-    <Shell.FlyoutFooter>
-        <Grid Padding="15">
-            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
-                VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
-                SegmentWidth="40" SegmentHeight="40">
-                <sf:SfSegmentedControl.ItemsSource>
-                    <x:Array Type="{x:Type sf:SfSegmentItem}">
-                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>
-                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>
-                    </x:Array>
-                </sf:SfSegmentedControl.ItemsSource>
-            </sf:SfSegmentedControl>
-        </Grid>
-    </Shell.FlyoutFooter>
+        <Tab Title="Perfil" Icon="user.png">
+            <ShellContent Title="Perfil" Route="ProfilePage" ContentTemplate="{DataTemplate views:ProfilePage}" />
+        </Tab>
+
+    </TabBar>
+
+    <!-- Rutas para navegación a Login y Registro -->
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate views:RegisterPage}" />
 
 </Shell>

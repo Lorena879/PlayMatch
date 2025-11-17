@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PlayMatch.Views.RegisterPage"
+    BackgroundColor="#7A0C1A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <!-- LOGO -->
+            <Image Source="playmatch_logo.png"
+                   HeightRequest="110"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
+
+            <!-- TÍTULO -->
+            <Label Text="Crear cuenta"
+                   FontSize="32"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+
+            <!-- SUBTITULO -->
+            <Label Text="Regístrate para empezar"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#FFD7DD"/>
+
+            <!-- CORREO -->
+            <Frame CornerRadius="12" Padding="10" BackgroundColor="White" HasShadow="False">
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Correo"
+                       Keyboard="Email"
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- CONTRASEÑA -->
+            <Frame CornerRadius="12" Padding="10" BackgroundColor="White" HasShadow="False">
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- CONFIRMAR CONTRASEÑA -->
+            <Frame CornerRadius="12" Padding="10" BackgroundColor="White" HasShadow="False">
+                <Entry x:Name="ConfirmEntry"
+                       Placeholder="Confirmar contraseña"
+                       IsPassword="True"
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- BOTÓN REGISTRAR -->
+            <Button Text="Crear cuenta"
+                    BackgroundColor="White"
+                    TextColor="#7A0C1A"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    FontSize="18"
+                    Clicked="BtnRegister_Clicked"/>
+
+            <!-- IR A LOGIN -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
+                <Label Text="¿Ya tienes cuenta?" TextColor="#FFD7DD"/>
+                <Label Text="Iniciar sesión"
+                       TextColor="White"
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
